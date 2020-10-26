@@ -25,3 +25,14 @@
 
 6. Test docker
     > `sudo docker run hello-world`
+
+## Docker commands
+> `sudo docker run -it aman/ccs /bin/bash`
+- `-it` is used to make the container run in interactive mode
+- `aman/ccs` is the image name for easier access.
+
+> `sudo docker build .`
+- To create image usind Dockerfile
+
+> To get the IP address of the docker
+`sudo docker inspect container_id(fba765bc9744) | grep IPAddress | cut -d '"' -f 4 | head -n 2 | tail -n 1`
