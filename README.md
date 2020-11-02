@@ -36,3 +36,11 @@
 
 > To get the IP address of the docker
 `sudo docker inspect container_id(fba765bc9744) | grep IPAddress | cut -d '"' -f 4 | head -n 2 | tail -n 1`
+
+
+
+## Update on project
+1. Built a Ubuntu container which even after installing old openssl is still secure.
+2. Built a debian container with old openssl and libssl but cannot build `debian:wheezy` so the oldest one I can do is stretch without updates breaking
+3. Built a pre-packaged debian container specially designed for vulnerability testing.
+    - Used a Kali docker container to make sure the docker created in `3` is vulnerable to openssl.
