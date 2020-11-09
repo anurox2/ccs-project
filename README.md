@@ -41,6 +41,11 @@
 
 ## Update on project
 1. Built a Ubuntu container which even after installing old openssl is still secure.
-2. Built a debian container with old openssl and libssl but cannot build `debian:wheezy` so the oldest one I can do is stretch without updates breaking
-3. Built a pre-packaged debian container specially designed for vulnerability testing.
-    - Used a Kali docker container to make sure the docker created in `3` is vulnerable to openssl.
+> Date: Nov 2-9, 2020
+2. Built a debian container with old openssl and libssl but cannot build `debian:wheezy` so the oldest one I can do is stretch without updates breaking.
+    - Ability to run `apt update`
+    - Using OpenSSL-1.0.1e-2
+    - Using LibSSL-1.0.0.1.0.1e-2
+    - Closed off port 80, and exposed port 443
+3. Reverse proxy works
+    - Reverse proxy even routes to my laptop easily so I can load this whole network up on a VM in the cloud and access it using the public IP

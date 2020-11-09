@@ -1,0 +1,5 @@
+deb http://archive.debian.org/debian/ wheezy main non-free contrib
+deb-src http://archive.debian.org/debian/ wheezy main non-free contrib
+
+deb http://archive.debian.org/debian-security/ wheezy/updates main non-free contrib
+deb-src http://archive.debian.org/debian-security/ wheezy/updates main non-free contrib
