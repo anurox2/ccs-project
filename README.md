@@ -47,5 +47,9 @@
     - Using OpenSSL-1.0.1e-2
     - Using LibSSL-1.0.0.1.0.1e-2
     - Closed off port 80, and exposed port 443
-3. Reverse proxy works
+3. The `vulnerability` container is vulnerable. Tested using a Python script
+    - heartbleed-masstest [ISSUE: runs only oon python2 :( ]
+    - <img src="./images/verified-vulnerable-server.png"> </img>
+4. Reverse proxy works
     - Reverse proxy even routes to my laptop easily so I can load this whole network up on a VM in the cloud and access it using the public IP
+5. Working on detection of malicious requests. Going through the same python file which I used to check for vulnerability.
