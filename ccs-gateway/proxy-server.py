@@ -42,38 +42,42 @@ def start():
             sys.exit(1)
     s.close()
 
+## conn_string would decide where the packet should be sent.
 def conn_string(conn, data, addr):
     try:
         print(data)
-        # # Extracting first line
-        # first_line = data.split('\n')[0]
-        
-        # url = first_line.split(' ')[1]
-        
-        # http_pos = url.find("://")
-        # if(http_pos == -1):
-        #     temp = url
-        # else:
-        #     temp = url[(http_pos+3):]
-        
-        # port_pos = temp.find(':')
+            # # Extracting first line
+            # first_line = data.split('\n')[0]
+            
+            # url = first_line.split(' ')[1]
+            
+            # http_pos = url.find("://")
+            # if(http_pos == -1):
+            #     temp = url
+            # else:
+            #     temp = url[(http_pos+3):]
+            
+            # port_pos = temp.find(':')
 
-        # webserver_pos = temp.find("/")
-        # if(webserver_pos == -1):
-        #     webserver_pos = len(temp)
-        # webserver = ''
-        # port = -1
-        # if(port_pos == -1 or webserver_pos < port_pos):
-        #     port = 80
-        #     webserver = temp[:webserver_pos]
-        # else:
-        #     port = int((temp[(port_pos+1):])[:webserver_pos-port_pos-1])
-        #     webserver = temp[:port_pos]
+            # webserver_pos = temp.find("/")
+            # if(webserver_pos == -1):
+            #     webserver_pos = len(temp)
+            # webserver = ''
+            # port = -1
+            # if(port_pos == -1 or webserver_pos < port_pos):
+            #     port = 80
+            #     webserver = temp[:webserver_pos]
+            # else:
+            #     port = int((temp[(port_pos+1):])[:webserver_pos-port_pos-1])
+            #     webserver = temp[:port_pos]
         
+        ## Add switch logic here ---------------
         proxy_server('172.18.0.2', 443, conn, addr, data)
     except Exception as e:
         pass
 
+
+## Function to proxy the connection to correct docker container.
 def proxy_server(webserver, port, conn, addr, data):
     try:
         print('here3')
@@ -108,4 +112,5 @@ def proxy_server(webserver, port, conn, addr, data):
         sys.exit()
                 
 
+## Replace this with if main code snippet. This is the entry point of code.
 start()
